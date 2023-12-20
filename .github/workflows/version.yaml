@@ -1,9 +1,9 @@
 name: Version
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -47,3 +47,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.head_ref }}
         tags: true
+        force_with_lease: true
